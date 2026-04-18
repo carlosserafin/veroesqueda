@@ -65,6 +65,7 @@ Construir la landing page principal bilingüe, altamente conversiva, con efectos
 - **Generación de imagen con AI (build/dev-time, NUNCA runtime cliente):** OpenAI Images (`openai` SDK, modelo por defecto `gpt-image-1`) y Google Gemini 2.5 Flash Image alias "Nano Banana" (`@google/genai`, modelo `gemini-2.5-flash-image-preview`). Usadas exclusivamente desde scripts internos para sprites de la explosión, placeholders del bloque CGI+AI y elementos auxiliares. Detalle completo, casos permitidos y prohibidos en §17.
 
 **Restricciones:**
+
 - Cero uso de `<form>` HTML nativo dentro de artifacts. Dentro de Next.js normal, usar `<form action={serverAction}>` cuando aplique.
 - No `localStorage` / `sessionStorage` dentro de Server Components.
 - No introducir librerías nuevas sin justificar en el PR: peso, mantenimiento, alternativa nativa.
@@ -130,6 +131,7 @@ Construir la landing page principal bilingüe, altamente conversiva, con efectos
 ```
 
 **Regla de oro de carpetas de imágenes:**
+
 - `public/images/cuadradas/` → grids de portafolio, cards, thumbnails, instagram-like
 - `public/images/verticales/` → hero mobile, parallax layers, stories, menús
 - `public/images/horizontales/` → hero desktop, backgrounds cinematográficos, section dividers
@@ -143,6 +145,7 @@ Construir la landing page principal bilingüe, altamente conversiva, con efectos
 **Palabras clave de estilo:** editorial, cinematográfico, apetitoso, premium, "food magazine meets Apple product page". Espacios en blanco generosos. Tipografía con personalidad. La foto es la reina — la UI no compite.
 
 **Paleta (propuesta inicial, validar con Vero):**
+
 - Base oscura: `#0E0B08` (casi negro, ligeramente cálido)
 - Base clara: `#FAF7F2` (crema)
 - Acento cálido: `#C8563C` (terracota / salsa reducida)
@@ -150,8 +153,9 @@ Construir la landing page principal bilingüe, altamente conversiva, con efectos
 - Neutros: escala de grises cálidos
 
 **Tipografía (propuesta):**
-- Display: serif editorial con contraste (ej. *Fraunces*, *Canela*, o *PP Editorial New*)
-- Texto: sans humanista legible (ej. *Inter*, *Geist*, o *Söhne*)
+
+- Display: serif editorial con contraste (ej. _Fraunces_, _Canela_, o _PP Editorial New_)
+- Texto: sans humanista legible (ej. _Inter_, _Geist_, o _Söhne_)
 - Usar `next/font` con `display: swap` y subsetting. Cero FOUT visible.
 
 **Jerarquía mobile-first NO NEGOCIABLE.** Todo se diseña primero en 375px. Los efectos pesados (3D, partículas) degradan elegantemente en móvil (prefers-reduced-motion y breakpoints).
@@ -163,11 +167,13 @@ Construir la landing page principal bilingüe, altamente conversiva, con efectos
 Estos efectos son el diferenciador. Implementarlos bien > implementar muchos.
 
 ### 5.1 Parallax multicapa en el Hero
+
 - 3-5 capas: fondo (plato completo desenfocado), mid (ingredientes individuales), foreground (hojas, gotas, humo), tipografía.
 - Dirección opuesta entre capas según scroll.
 - En móvil: parallax reducido (1-2 capas) o reemplazo por animación de entrada simple. Respeto estricto a `prefers-reduced-motion`.
 
 ### 5.2 Explosión de ingredientes (hero secundario o transición de sección)
+
 - Al entrar a la sección (IntersectionObserver), los ingredientes de un plato "estallan" desde el centro y se reagrupan formando el plato final.
 - Opción A (preferida si se logra <60kb): Canvas 2D con sprites de PNGs con transparencia de las propias fotos de Vero.
 - Opción B: React Three Fiber con planos texturizados + física básica.
@@ -175,18 +181,22 @@ Estos efectos son el diferenciador. Implementarlos bien > implementar muchos.
 - SIEMPRE un fallback estático (imagen final del plato) si falla el script o hay reduced-motion.
 
 ### 5.3 Scroll-driven storytelling
+
 - Secciones tipo "pin" con GSAP ScrollTrigger donde el texto cambia mientras la imagen de fondo hace crossfade entre platos.
 - Usado para contar el "por qué una buena foto vende más": estadísticas (search + citar fuente), comparativa antes/después (foto amateur vs. foto profesional de Vero).
 
 ### 5.4 Reveals cinematográficos
+
 - Texto que aparece letra por letra o palabra por palabra en headings clave (Framer Motion `staggerChildren`).
 - Imágenes con máscara `clip-path` que se expande al entrar en viewport.
 
 ### 5.5 Cursor / hover premium (solo desktop)
+
 - Cursor custom sutil que crece sobre imágenes interactivas.
 - Hover sobre cards de portafolio: zoom leve + reveal del nombre del cliente + CTA.
 
 ### 5.6 Las fotos reales de Vero son el material protagonista de TODOS los efectos
+
 Esta es una regla de producto, no estética: las fotografías profesionales que ya están en `public/images/{cuadradas,verticales,horizontales}/` son el activo más fuerte del proyecto. Los efectos de movimiento, parallax y explosión existen para amplificar esas fotos, nunca para sustituirlas con visual sintético.
 
 - **Parallax (§5.1):** las capas son recortes/máscaras de fotos reales horizontales y verticales, no ilustraciones genéricas ni gradientes.
@@ -198,6 +208,7 @@ Esta es una regla de producto, no estética: las fotografías profesionales que 
 Antes de escribir el markup de cualquier sección: revisar `lib/images.ts` y elegir las fotos de mayor impacto disponibles para ese rol.
 
 **Performance innegociable:**
+
 - Lighthouse Performance mobile ≥ 85, desktop ≥ 95.
 - LCP < 2.5s. CLS < 0.1. INP < 200ms.
 - Cualquier efecto que baje de estos umbrales se refactoriza o se elimina.
@@ -226,14 +237,14 @@ Estructura obligatoria (bilingüe ES/EN completa):
    - **Conferencista y tallerista internacional.**
    - **Obra expuesta en Europa, Estados Unidos y México.**
    - **Producciones con marcas internacionales mezclando fotografía, CGI y AI.**
-   Presentación: tarjetas/pills horizontales con íconos mínimos, o línea de tiempo sutil, o lista editorial con tipografía grande. NO logos-wall genérico. La idea: "no estás contratando a alguien que aprendió en YouTube, estás contratando a alguien que juzga a otros fotógrafos".
+     Presentación: tarjetas/pills horizontales con íconos mínimos, o línea de tiempo sutil, o lista editorial con tipografía grande. NO logos-wall genérico. La idea: "no estás contratando a alguien que aprendió en YouTube, estás contratando a alguien que juzga a otros fotógrafos".
 
 6. **Foto + CGI + AI — el diferenciador** — sección propia que explica, en lenguaje de cliente (no técnico), por qué combinar fotografía real con CGI y AI le ahorra dinero y le da ventaja:
    - Variantes infinitas de un mismo platillo sin reshoot.
    - Escenarios imposibles (platillos gigantes, ingredientes flotando, estaciones del año cambiando de fondo).
    - Consistencia de marca entre campañas.
    - Producción más rápida para menús estacionales.
-   Visual: antes/después o split-screen foto pura → versión aumentada con CGI/AI. Idealmente con assets reales de Vero; si no los hay aún, dejar placeholder marcado `TODO: assets CGI/AI`. Este bloque es un upsell estratégico.
+     Visual: antes/después o split-screen foto pura → versión aumentada con CGI/AI. Idealmente con assets reales de Vero; si no los hay aún, dejar placeholder marcado `TODO: assets CGI/AI`. Este bloque es un upsell estratégico.
 
 7. **Explosión de ingredientes** — transición cinematográfica que lleva al siguiente bloque (ver §5.2).
 
@@ -242,7 +253,7 @@ Estructura obligatoria (bilingüe ES/EN completa):
    - **Web + SEO orgánico** (landing como la que están viendo + framework SEO propio).
    - **Membresía Academia** (tipo Skool, mensual — HOW TOs fotografía, estilismo, AI, prompt engineering).
    - Card secundaria: **Talleres y conferencias** (link a página dedicada; no saturar la card principal).
-   Cada card con precio "desde $X" o "Solicitar cotización" — validar con Vero.
+     Cada card con precio "desde $X" o "Solicitar cotización" — validar con Vero.
 
 9. **Para quién es** — restaurantes independientes, cadenas, bares, hoteles, productores, chefs personales, marcas de alimentos empacados. Iconografía + 1 línea cada uno.
 
@@ -261,6 +272,7 @@ Estructura obligatoria (bilingüe ES/EN completa):
 16. **Footer** — links, redes, cambio de idioma, aviso de privacidad, términos, créditos de autoría de todas las fotos.
 
 **Distribución de credenciales a lo largo del scroll (no concentrar todo en §5):**
+
 - Hero → micro-mención Sony Alpha Partner + una credencial (ej. "Juez internacional").
 - §5 → sección completa de autoridad.
 - §6 → "producciones con marcas internacionales en CGI+AI" como contexto del diferenciador.
@@ -270,6 +282,7 @@ Estructura obligatoria (bilingüe ES/EN completa):
 Esto evita el anti-patrón de "me presumo en un solo bloque y luego desaparezco". La credibilidad se siente presente toda la página.
 
 **Tono de copy:**
+
 - ES: cercano-profesional, tú no usted, frases cortas, verbos activos, cero relleno corporativo.
 - EN: confident, warm, no jargon, American English default.
 - **Sobre las credenciales:** confianza tranquila, no autobombo. Mostrar, no gritar. Ejemplos de cómo decirlo bien:
@@ -286,11 +299,13 @@ Esto evita el anti-patrón de "me presumo en un solo bloque y luego desaparezco"
 Este proyecto ES el producto "Web + SEO" que Vero vende. El SEO se implementa como una **capa declarativa** reutilizable.
 
 **`lib/seo.ts` debe exportar:**
+
 - `buildMetadata({ locale, path, title, description, image, type })` → retorna objeto `Metadata` de Next con OG, Twitter, canonicals, hreflang alternates ES/EN.
 - `buildJsonLd({ type, data })` → genera schema.org (LocalBusiness, Service, Article, FAQPage, BreadcrumbList, ImageObject con `creator` = Vero, **Person con credenciales de Vero**).
 - `buildSitemapEntries()` → lee rutas estáticas + MDX dinámico.
 
 **Schema.org `Person` de Vero (obligatorio en home y página de autoridad):**
+
 ```
 {
   "@type": "Person",
@@ -307,9 +322,11 @@ Este proyecto ES el producto "Web + SEO" que Vero vende. El SEO se implementa co
   "image": "/og/vero-portrait.jpg"
 }
 ```
+
 No inventar URLs de `sameAs` — pedirlas a Vero antes de publicar.
 
 **Reglas SEO obligatorias:**
+
 1. Cada página define su propio `generateMetadata` — nada de metadata heredada silenciosamente.
 2. `<html lang={locale}>` correcto por ruta.
 3. Hreflang bidireccional ES↔EN en TODAS las páginas traducidas.
@@ -322,6 +339,7 @@ No inventar URLs de `sameAs` — pedirlas a Vero antes de publicar.
 10. `next-sitemap` NO — usar el sitemap nativo de Next 15.
 
 **Keywords semilla (validar con research real al arrancar):**
+
 - ES principales: "fotografía profesional de alimentos", "fotógrafa gastronómica México", "food styling restaurantes", "fotos para menú de restaurante", "fotografía de platillos para redes sociales", "fotógrafa de comida León Guanajuato" (ajustar ubicación según Vero).
 - ES autoridad/diferenciador: "fotógrafa Sony Alpha Partner", "juez internacional fotografía gastronómica", "fotografía de alimentos con CGI y AI", "producción híbrida foto CGI AI restaurantes", "taller fotografía de alimentos México".
 - EN principales: "food photographer Mexico", "restaurant food photography", "food styling photographer", "menu photography services".
@@ -348,6 +366,7 @@ Estos términos de autoridad son low-competition y alto-intent: capturan búsque
 ## 9. Derechos, créditos y marcas de terceros
 
 ### 9.1 Fotografías de Vero
+
 - **Todas las fotos en `public/images/` son propiedad de Verónica Esqueda.** Ella es la autora y tiene los derechos.
 - En el footer de cada página: "© [año] Verónica Esqueda. Todas las fotografías son obra de la autora."
 - JSON-LD `ImageObject` refleja autoría (`creator`, `copyrightHolder`, `copyrightNotice`).
@@ -355,20 +374,24 @@ Estos términos de autoridad son low-competition y alto-intent: capturan búsque
 - NO usar stock de terceros sin validar. Si se necesita un asset genérico (icono, ilustración), usar sólo fuentes con licencia clara (Lucide icons, Heroicons, etc.) y documentarlo.
 
 ### 9.2 Sony Alpha Partner
+
 - Vero es **Embajadora Sony Alpha Partner vigente.** Puede usarse el badge/logo oficial respetando guidelines de marca de Sony (no distorsionar, no alterar color, no colocar sobre fondos conflictivos, mantener área de respeto).
 - Descargar assets oficiales del programa Sony Alpha Partner — no recrear el logo.
 - Acompañar siempre con texto "Sony Alpha Partner" o "Embajadora Sony Alpha" para evitar confusión con simple uso del logo.
 - Si en algún momento Vero deja de ser partner, remover inmediatamente todas las menciones. Dejar componente `<SonyAlphaBadge />` con un feature flag `NEXT_PUBLIC_SONY_PARTNER_ACTIVE` para poder apagarlo con una sola variable de entorno.
 
 ### 9.3 Marcas y clientes internacionales
+
 - Al listar marcas con las que Vero ha colaborado (§6 sección 12 "Reconocimientos"), **sólo incluir aquellas para las cuales Vero tenga derecho de uso de nombre/logo en materiales promocionales propios.** Muchos contratos de producción prohíben esto.
 - Antes de publicar cualquier logo de marca internacional, validar con Vero caso por caso.
 - Alternativa segura: mencionar los sectores/tipos de marca sin logos ("colaboraciones con marcas internacionales de bebidas, retail gourmet y cadenas hoteleras") hasta confirmar permisos.
 
 ### 9.4 Obra expuesta
+
 - Las exposiciones en Europa, Estados Unidos y México son parte del CV artístico de Vero y pueden mencionarse libremente. Si se citan nombres de galerías, museos o ferias, validar con Vero que estén correctos (nombre exacto, ciudad, año) antes de publicar. NO inventar nombres de instituciones.
 
 ### 9.5 Imágenes generadas con AI (uso interno del sitio)
+
 - **Boundary físico:** las fotos auténticas de Vero viven en `public/images/{cuadradas,verticales,horizontales}/`. Las imágenes generadas con AI (OpenAI Images, Gemini Nano Banana) viven exclusivamente en `public/images/generated/<propósito>/`. Nunca mezclar carpetas.
 - **Sidecar JSON obligatorio** por cada imagen generada: `<archivo>.meta.json` con `prompt`, `model`, `source_image` (si fue image-to-image), `created_at`, `purpose`. Se commitea junto a la imagen.
 - **Atribución honesta:** en `alt`, `figcaption` o JSON-LD nunca se atribuye una imagen generada con AI a Vero como autora fotográfica. Si la generada se basa en dirección/concepto de Vero, el crédito apropiado es "Dirección creativa: Verónica Esqueda · Render generativo" o similar. Esto protege la reputación artística de Vero.
@@ -469,12 +492,14 @@ Cuando pidamos una tarea, Claude Code debe:
 Estas herramientas son **internas del proceso de desarrollo** — se invocan desde scripts en `scripts/ai/`. Ningún componente de la web hace llamadas a estas APIs en runtime desde el cliente. Cero exposición de claves al browser.
 
 ### 17.1 Proveedores
+
 - **OpenAI Images** (`openai` SDK, modelo por defecto `gpt-image-1`): generación de alta calidad text-to-image, edición/inpainting con máscara fina. Usado para sprites finales que requieren control estricto.
 - **Google Gemini 2.5 Flash Image / "Nano Banana"** (`@google/genai`, modelo `gemini-2.5-flash-image-preview`): iteración rápida y económica, image-to-image excelente, fuerte preservando identidad de la foto fuente. Usado para variantes y para extraer/transformar elementos a partir de fotos reales de Vero.
 
 Heurística: empezar exploración con Gemini Nano Banana (más rápido y barato, mejor para image-to-image desde fotos reales). Pasar a OpenAI cuando se necesite calidad final, máscara fina o inpainting controlado.
 
 ### 17.2 Variables de entorno requeridas
+
 Definidas en `.env.example` (commiteado, sin valores) y `.env.local` (gitignored, con valores reales):
 
 ```
@@ -487,18 +512,21 @@ GEMINI_IMAGE_MODEL=gemini-2.5-flash-image-preview
 Las claves NUNCA se exponen al cliente — no llevan prefijo `NEXT_PUBLIC_`. Cualquier llamada a estos proveedores ocurre en scripts CLI o, como excepción justificada, en server actions con rate-limit estricto.
 
 ### 17.3 Casos de uso autorizados
+
 1. **Sprites de la explosión (§5.2):** recortar ingredientes individuales (jitomate, hojas de albahaca, gotas de aceite, salpicaduras) con fondo transparente desde las fotos reales de Vero. Image-to-image con Gemini para preservar iluminación; OpenAI para máscaras finas si hace falta.
 2. **Placeholders del bloque Foto+CGI+AI (§6.6):** mientras llegan los assets reales de campañas de Vero, generar variantes ilustrativas claramente marcadas como muestra del proceso (no como portafolio terminado).
 3. **Elementos auxiliares (§5.1, §5.4):** humo, vapor, partículas, salpicaduras — cuando no existan en el set fotográfico.
 4. **PROHIBIDO:** usar AI para "mejorar" o re-renderizar las fotos auténticas de Vero. Ese set es intocable. Tampoco generar fotos de platillos completos para presentar como portafolio.
 
 ### 17.4 Workflow operativo
+
 1. Nueva utilidad en `scripts/ai/<nombre>.ts` (ejecutable con `pnpm tsx`).
 2. La utilidad lee inputs de `public/images/...` o de prompts hardcodeados, llama al proveedor, y escribe a `public/images/generated/<propósito>/<archivo>.{png,webp}` + sidecar `<archivo>.meta.json`.
 3. Loguear costo aproximado por corrida en consola.
 4. El output se commitea como cualquier otro asset estático — el sitio no regenera en runtime.
 
 ### 17.5 Boundaries de derechos
+
 Ver §9.5. Resumen: las generadas viven separadas, llevan sidecar de procedencia y NUNCA se atribuyen como obra fotográfica de Vero.
 
 ---
