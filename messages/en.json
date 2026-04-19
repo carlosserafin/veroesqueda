@@ -22,14 +22,334 @@
     "rights": "All rights reserved.",
     "sonyAlpha": "Sony Alpha Partner",
     "experience": "+15 years shooting food",
-    "based": "Mexico City · International"
+    "based": "Mexico City · Working internationally"
   },
   "home": {
     "metaTitle": "Vero Esqueda · Professional food photography · Mexico City",
     "metaDescription": "Professional food photography, culinary art direction, and hybrid photo + CGI + AI production. Sony Alpha Partner, 15+ years, international judge. Mexico City · global reach.",
-    "eyebrow": "Vero Esqueda · AI Specialist & Photo",
-    "title": "Under construction",
-    "subtitle": "Landing in development. Professional food photography, art direction, and hybrid photo + CGI + AI production."
+    "hero": {
+      "eyebrow": "International judge · 15+ years",
+      "title": "Photography that makes the food sell itself.",
+      "subtitle": "Sony Alpha Partner. Culinary art direction and hybrid photo + CGI + AI production for restaurants, chains and brands that can't afford mediocre images.",
+      "ctaPrimary": "See packages",
+      "ctaSecondary": "See portfolio",
+      "scroll": "scroll",
+      "imageAlt": "Editorial food photograph by Vero Esqueda"
+    },
+    "problem": {
+      "eyebrow": "The problem",
+      "headline": "Your food is incredible. Your photos don't say so.",
+      "body": "Your customer decides in less than three seconds whether to walk into your restaurant or scroll to the next one. That decision is made by the photo. Not by the taste."
+    },
+    "visualProof": {
+      "eyebrow": "Proof, no words",
+      "headline": "The image is the argument.",
+      "itemAlt": "Food photograph by Vero Esqueda — piece {n}"
+    },
+    "stats": {
+      "eyebrow": "Why it matters",
+      "headline": "The right photo sells. The data is on the table.",
+      "items": {
+        "menu": {
+          "value": "30%",
+          "body": "Average increase in orders when a digital menu uses professional photography vs. amateur."
+        },
+        "social": {
+          "value": "2.3×",
+          "body": "Higher social engagement for restaurants that publish consistent editorial photography."
+        },
+        "delivery": {
+          "value": "65%",
+          "body": "Of delivery users say the photo is the #1 factor when picking a new restaurant."
+        }
+      },
+      "sourceLabel": "Source",
+      "sourcesNote": "Industry reference figures (Toast, Hootsuite, DoorDash). We validate every number with you before using it in your campaigns."
+    },
+    "authority": {
+      "eyebrow": "Who's behind the camera",
+      "headline": "You're not hiring someone who learned on YouTube.",
+      "intro": "Verónica Esqueda has spent more than fifteen years making food look the way it tastes. Not just photographing — directing, styling, judging, and teaching other photographers how to do it right.",
+      "imageAlt": "Editorial portrait of Verónica Esqueda on set",
+      "credentials": {
+        "sony": {
+          "title": "Sony Alpha Partner",
+          "detail": "Active ambassador in Sony's elite program."
+        },
+        "judge": {
+          "title": "International judge",
+          "detail": "Evaluates the work of professional photographers worldwide."
+        },
+        "speaker": {
+          "title": "Speaker and workshop lead",
+          "detail": "Teaches photography, styling and art direction at international forums."
+        },
+        "exhibited": {
+          "title": "Exhibited work",
+          "detail": "Shows in Europe, the United States and Mexico."
+        },
+        "experience": {
+          "title": "15+ year career",
+          "detail": "Specialized in food, beverages and culinary styling."
+        },
+        "hybrid": {
+          "title": "Photo + CGI + AI",
+          "detail": "Hybrid productions for international brands."
+        }
+      },
+      "closer": "Quiet confidence, no self-promotion. The credentials show up in every delivery."
+    },
+    "hybrid": {
+      "eyebrow": "Photo + CGI + AI",
+      "headline": "The differentiator almost no one in LATAM can offer.",
+      "intro": "We pair Vero's real photography with CGI and generative tooling to cut production costs, iterate infinite variants and stage scenes that simply can't be captured on camera.",
+      "labelPhoto": "Real photo",
+      "labelHybrid": "Augmented version",
+      "tagPlaceholder": "Sample · final asset pending",
+      "benefits": {
+        "variants": {
+          "title": "Infinite variants",
+          "body": "Multiple takes of the same dish without a reshoot — different backdrops, seasons, plating."
+        },
+        "impossible": {
+          "title": "Impossible scenes",
+          "body": "Giant dishes, floating ingredients, atmospheres that would cost a fortune to shoot in studio."
+        },
+        "consistency": {
+          "title": "Brand consistency",
+          "body": "Same light and palette across campaigns, even months apart."
+        },
+        "speed": {
+          "title": "Faster turnaround",
+          "body": "Seasonal menus and tactical campaigns without scheduling another shoot day."
+        }
+      }
+    },
+    "services": {
+      "eyebrow": "Packages",
+      "headline": "Three ways to work with Vero.",
+      "intro": "Each package scales by menu size, production days and post-production depth. Personalized quote within 24 h.",
+      "items": {
+        "photo": {
+          "name": "Professional photography",
+          "tag": "Photo",
+          "body": "Full food and beverage shoot with styling included. Optional CGI + AI add-on for extended campaigns.",
+          "bullets": {
+            "a": "Creative briefing + tailored moodboard",
+            "b": "On-set culinary styling",
+            "c": "Edited delivery in 7–10 days"
+          },
+          "price": "From USD $1,400",
+          "cta": "Request a quote"
+        },
+        "web": {
+          "name": "Web + organic SEO",
+          "tag": "Digital",
+          "body": "A landing page on the level of the one you're seeing, with our own SEO framework so your business ranks on Google without depending on ads.",
+          "bullets": {
+            "a": "Mobile-first editorial design",
+            "b": "Bilingual ES/EN with hreflang",
+            "c": "Schema.org + sitemap + Core Web Vitals"
+          },
+          "price": "From USD $2,700",
+          "cta": "I want one"
+        },
+        "academy": {
+          "name": "Academy membership",
+          "tag": "Learn",
+          "body": "Monthly subscription with HOW TOs on photography, styling, generative AI applied to food and prompt engineering.",
+          "bullets": {
+            "a": "New tutorials every week",
+            "b": "Battle-tested prompt templates",
+            "c": "Live sessions with Vero"
+          },
+          "price": "From USD $22 / month",
+          "cta": "See membership"
+        }
+      },
+      "workshops": {
+        "name": "Workshops and talks",
+        "body": "In-person and online training for creative teams, brands and schools.",
+        "cta": "Request info"
+      }
+    },
+    "forWhom": {
+      "eyebrow": "Who it's for",
+      "headline": "If your business depends on food looking great, this is for you.",
+      "items": {
+        "independent": {
+          "title": "Independent restaurants",
+          "body": "Menus, social and delivery that convert."
+        },
+        "chains": {
+          "title": "Chains",
+          "body": "Visual consistency across locations and campaigns."
+        },
+        "bars": {
+          "title": "Bars and cocktail rooms",
+          "body": "Editorial cocktails and digital menus."
+        },
+        "hotels": {
+          "title": "Boutique hotels",
+          "body": "F&B, room service and brand dossiers."
+        },
+        "producers": {
+          "title": "Artisan producers",
+          "body": "Packaging, ecommerce and retail campaigns."
+        },
+        "chefs": {
+          "title": "Personal chefs",
+          "body": "Visual identity, books and press."
+        },
+        "packaged": {
+          "title": "Food brands",
+          "body": "Packshots, lifestyle and global campaigns."
+        },
+        "agencies": {
+          "title": "Agencies and producers",
+          "body": "Photographic craft + AI outsourcing."
+        }
+      }
+    },
+    "portfolio": {
+      "eyebrow": "Portfolio",
+      "headline": "Find your kind of business. We'll show you similar work.",
+      "cta": "See all cases",
+      "items": {
+        "restaurant": {
+          "category": "Signature restaurant",
+          "title": "Contemporary cuisine",
+          "imageAlt": "Signature restaurant case — photography by Vero Esqueda"
+        },
+        "chain": {
+          "category": "Chain",
+          "title": "Consistency across locations",
+          "imageAlt": "Restaurant chain case — photography by Vero Esqueda"
+        },
+        "bar": {
+          "category": "Bar",
+          "title": "Editorial cocktails",
+          "imageAlt": "Cocktail bar case — photography by Vero Esqueda"
+        },
+        "boutiqueHotel": {
+          "category": "Boutique hotel",
+          "title": "F&B and brand dossier",
+          "imageAlt": "Boutique hotel case — photography by Vero Esqueda"
+        },
+        "producer": {
+          "category": "Artisan producer",
+          "title": "Packaging and campaign",
+          "imageAlt": "Artisan producer case — photography by Vero Esqueda"
+        },
+        "chef": {
+          "category": "Personal chef",
+          "title": "Identity and press",
+          "imageAlt": "Personal chef case — photography by Vero Esqueda"
+        }
+      }
+    },
+    "process": {
+      "eyebrow": "How we work",
+      "headline": "Five steps. Zero surprises.",
+      "steps": {
+        "brief": {
+          "title": "Briefing",
+          "body": "We map your business, audience and where the image will live."
+        },
+        "preproduction": {
+          "title": "Pre-production",
+          "body": "Moodboard, shot list, prop casting and approval."
+        },
+        "shoot": {
+          "title": "Shoot",
+          "body": "Production day with styling, assistance and Vero directing."
+        },
+        "postproduction": {
+          "title": "Post-production",
+          "body": "Selection, editorial retouch and, if needed, CGI + AI layer."
+        },
+        "delivery": {
+          "title": "Delivery",
+          "body": "Final files in 7–10 days with documented usage rights."
+        }
+      }
+    },
+    "recognitions": {
+      "label": "Recognitions",
+      "items": {
+        "sony": "Sony Alpha Partner",
+        "international": "International photography judge",
+        "speaker": "International speaker",
+        "exhibitions": "Exhibited work · Europe · USA · Mexico"
+      },
+      "note": "Brand and publication logos are only published with written permission."
+    },
+    "testimonials": {
+      "eyebrow": "What clients say",
+      "headline": "Trust built one plate at a time.",
+      "placeholderNote": "Coming soon — real testimonials with photo, name and business.",
+      "items": {
+        "p1": {
+          "quote": "Reserved space for the first real testimonial.",
+          "attribution": "Client · Business · City"
+        },
+        "p2": {
+          "quote": "Reserved space for the second real testimonial.",
+          "attribution": "Client · Business · City"
+        },
+        "p3": {
+          "quote": "Reserved space for the third real testimonial.",
+          "attribution": "Client · Business · City"
+        }
+      }
+    },
+    "faq": {
+      "eyebrow": "Frequently asked",
+      "headline": "What we get asked the most before we start.",
+      "items": {
+        "price": {
+          "q": "How much does a session cost?",
+          "a": "It depends on the number of dishes, production days and post-production depth. Personalized quote in less than 24 h after the briefing."
+        },
+        "location": {
+          "q": "Where does the shoot happen?",
+          "a": "We work in Mexico City — studio or your location. For shoots out of town, transparent travel costs are added to the proposal."
+        },
+        "rights": {
+          "q": "Who owns the rights to the images?",
+          "a": "You get a clear, documented usage license. Vero retains authorship and may show the work in her portfolio unless an explicit NDA applies."
+        },
+        "delivery": {
+          "q": "How long until delivery?",
+          "a": "7–10 business days for standard photography. Hybrid productions with CGI or AI are scoped case by case."
+        },
+        "revisions": {
+          "q": "How many revision rounds are included?",
+          "a": "Two rounds of editorial retouching on the final selection. Creative-direction changes are discussed in pre-production."
+        },
+        "travel": {
+          "q": "Do you travel for on-site production?",
+          "a": "Yes. We've produced across LATAM, the US and Europe. We coordinate travel and permits."
+        },
+        "cgi": {
+          "q": "Do you offer CGI or AI as a standalone service?",
+          "a": "Yes. If you already have photography and need to extend a campaign with generative variants or CGI, we can add that layer."
+        },
+        "membership": {
+          "q": "How does the Academy membership work?",
+          "a": "Monthly subscription with access to new tutorials weekly, prompt templates and live sessions with Vero. Cancel anytime."
+        }
+      }
+    },
+    "finalCta": {
+      "eyebrow": "Let's start",
+      "headline": "Let's turn your menu into a reason to walk in.",
+      "body": "Tell us what you need. We reply in less than 24 hours with an initial plan and budget ranges.",
+      "ctaPrimary": "Email us",
+      "ctaWhatsapp": "WhatsApp",
+      "ctaWhatsappAria": "Start a WhatsApp conversation with Vero Esqueda",
+      "formNote": "Smart form with automated follow-up coming soon. For now, write to us directly."
+    }
   },
   "localeSwitcher": {
     "label": "Language",

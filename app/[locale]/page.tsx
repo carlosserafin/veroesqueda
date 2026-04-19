@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
-import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { buildMetadata } from "@/lib/seo";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { ProblemSection } from "@/components/sections/ProblemSection";
+import { VisualProofSection } from "@/components/sections/VisualProofSection";
+import { StatsSection } from "@/components/sections/StatsSection";
+import { AuthoritySection } from "@/components/sections/AuthoritySection";
+import { HybridProductionSection } from "@/components/sections/HybridProductionSection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
+import { ForWhomSection } from "@/components/sections/ForWhomSection";
+import { PortfolioTeaserSection } from "@/components/sections/PortfolioTeaserSection";
+import { ProcessSection } from "@/components/sections/ProcessSection";
+import { RecognitionsSection } from "@/components/sections/RecognitionsSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { FaqSection } from "@/components/sections/FaqSection";
+import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 
 export async function generateMetadata({
   params,
@@ -22,19 +35,22 @@ export async function generateMetadata({
 export default async function Home({ params }: { params: Promise<{ locale: Locale }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <HomeView />;
-}
-
-function HomeView() {
-  const t = useTranslations("home");
-
   return (
-    <main className="grid min-h-screen place-items-center p-8 text-center">
-      <div className="space-y-6">
-        <p className="text-xs tracking-[0.2em] uppercase opacity-60">{t("eyebrow")}</p>
-        <h1 className="text-4xl font-medium sm:text-6xl">{t("title")}</h1>
-        <p className="mx-auto max-w-prose opacity-70">{t("subtitle")}</p>
-      </div>
+    <main>
+      <HeroSection />
+      <ProblemSection />
+      <VisualProofSection />
+      <StatsSection />
+      <AuthoritySection />
+      <HybridProductionSection />
+      <ServicesSection />
+      <ForWhomSection />
+      <PortfolioTeaserSection />
+      <ProcessSection />
+      <RecognitionsSection />
+      <TestimonialsSection />
+      <FaqSection />
+      <FinalCtaSection />
     </main>
   );
 }
