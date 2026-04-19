@@ -45,6 +45,9 @@ next-env.d.ts
 # ─── Certificados ───────────────────────────────────────────────────────────
 *.pem
 
+# ─── Generados en build (recreados por prebuild/predev) ─────────────────────
+/lib/generated/
+
 # ─── Logs ───────────────────────────────────────────────────────────────────
 npm-debug.log*
 yarn-debug.log*

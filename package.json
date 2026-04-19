@@ -10,15 +10,19 @@
     "url": "https://github.com/carlosserafin/veroesqueda.git"
   },
   "scripts": {
+    "predev": "pnpm images:manifest",
     "dev": "next dev --turbopack",
+    "prebuild": "pnpm images:manifest",
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
+    "pretypecheck": "pnpm images:manifest",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "images:manifest": "tsx scripts/build-image-manifest.ts"
   },
   "dependencies": {
     "@google/genai": "^1.50.1",
