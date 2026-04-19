@@ -1,0 +1,30 @@
+{
+  "common": {
+    "brand": "Vero Esqueda",
+    "tagline": "AI Specialist & Photo"
+  },
+  "nav": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "services": "Services",
+    "academy": "Academy",
+    "contact": "Contact"
+  },
+  "footer": {
+    "credits": "© {year} Verónica Esqueda. All photographs are the author's own work.",
+    "rights": "All rights reserved.",
+    "sonyAlpha": "Sony Alpha Partner",
+    "experience": "+15 years shooting food",
+    "based": "Mexico City · International"
+  },
+  "home": {
+    "eyebrow": "Vero Esqueda · AI Specialist & Photo",
+    "title": "Under construction",
+    "subtitle": "Landing in development. Professional food photography, art direction, and hybrid photo + CGI + AI production."
+  },
+  "localeSwitcher": {
+    "label": "Language",
+    "es": "Spanish",
+    "en": "English"
+  }
+}
