@@ -5,10 +5,17 @@
   },
   "nav": {
     "home": "Inicio",
+    "homeAria": "Vero Esqueda — ir al inicio",
     "portfolio": "Portafolio",
     "services": "Servicios",
     "academy": "Academia",
     "contact": "Contacto"
+  },
+  "badges": {
+    "sonyAlpha": {
+      "label": "Sony Alpha Partner",
+      "aria": "Vero Esqueda es Embajadora Sony Alpha Partner"
+    }
   },
   "footer": {
     "credits": "© {year} Verónica Esqueda. Todas las fotografías son obra de la autora.",
